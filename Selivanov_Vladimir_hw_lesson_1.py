@@ -3,7 +3,7 @@
 def convert_time(duration: int) -> str:
     positive_or_negative = ''
     if duration < 0:
-        duration = -1 * duration
+        duration = -1 * duration   # здесь можно просто выводить ошибку (отрицательного времени не бывает)
         positive_or_negative = '-'
     days = duration // 86400
     hours = (duration // 3600) % 24
@@ -25,7 +25,7 @@ def convert_time(duration: int) -> str:
         seconds = ''
     else:
         seconds = positive_or_negative + str(seconds) + ' сек'
-    Time = f'{days}{hours}{minutes}{seconds}'
+    Time = f'{days}{hours}{minutes}{seconds}'  # Переменные обычно называются строчными буквами
 
     return Time
 
@@ -42,7 +42,7 @@ def sum_list_1(dataset: list) -> int:
     for number in dataset:
         sum_of_digits = 0
         for i in range(len(str(number))):
-            sum_of_digits += int(str(number)[i])
+            sum_of_digits += int(str(number)[i])  # Это чит :), нужно использовать только арифметические операции, подумай, как разделить число на цифры с помощью while
         if sum_of_digits % 7 == 0:
             sum += number
     return sum
@@ -57,7 +57,7 @@ def sum_list_2(dataset: list) -> int:
     for number in dataset_plus_17:
         sum_of_digits = 0
         for i in range(len(str(number))):
-            sum_of_digits += int(str(number)[i])
+            sum_of_digits += int(str(number)[i])  # Аналогично строке 45
         if sum_of_digits % 7 == 0:
             sum += number
     return sum
@@ -72,7 +72,7 @@ def sum_list_3(dataset: list) -> int:
         sum_of_digits = 0
         number_plus_17 = number + 17
         for i in range(len(str(number_plus_17))):
-            sum_of_digits += int(str(number_plus_17)[i])
+            sum_of_digits += int(str(number_plus_17)[i])  # Аналогично
         if sum_of_digits % 7 == 0:
             sum += number_plus_17
     return sum
